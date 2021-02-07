@@ -98,3 +98,31 @@ const getMinorChordNotes = (note) => {
 
   return resultArray
 }
+
+const circleOfFifth = () => {
+  const formattedNotes = musicalNotes()
+  let noteIndex = 0
+  let resultArray = []
+
+  for (let i = 1; i <= formattedNotes.length; i++) {
+    console.log(i)
+    resultArray.push(formattedNotes[noteIndex])
+    noteIndex = (noteIndex + 5) % 12 
+  }
+  return resultArray
+}
+
+const createElement = (component, id = '', innerText = '') => {
+  const newElement = document.createElement(component)
+
+  if (id) 
+    newElement.id = id
+  if (innerText)
+     newElement.innerText = innerText
+
+  return newElement
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const mainContainer =  document.getElementById('main-container')
+})
